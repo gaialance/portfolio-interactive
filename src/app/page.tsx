@@ -75,6 +75,8 @@ export default function Home() {
         {!showButton && (
           <h4 className={styles.navigationText} onClick={()=>handleClick(-1)} >Home</h4>
         )}
+
+        <h4 className={styles.mobileNavigation} onClick={()=>handleClick(-1)} >Home</h4>
        
       </div>
       <div className={styles.rightContainer}>
