@@ -1,297 +1,304 @@
 .container{
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    display: flex;
-    flex-direction: row;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    
+    .bgimage{
+        position: absolute;
+        filter: blur(8px);
+        width: 100vw;
+        overflow-x: hidden;
+        height: 100vh;
+        background-size: contain;
+    }
 
-    .leftContainer{
-        margin: 0;
+    .innerContainer{
         position: relative;
+        height: 100%;
+        width: 70%;
+        margin: 0px 10%;
         display: flex;
-
-        image{
-            position: absolute;
-            object-fit: contain;
-        }
-
-        h1, h2 , h3 {
-            font-family: var(--font-stick-no-bills);
-            font-style: normal;
-            color: white;
-            font-weight: 500;
-            text-shadow: 5px 10px black;
-        }
-
-        .mainHeader{
-
-            h3{
-                padding-top: 10%;
-                margin:0px 0px;
-            }
-            
-            position: absolute;
-            font-size: 128px;
-            line-height: 191px;
-            letter-spacing: 0.05em;
-            padding: 0% 3%;
-            padding-left: 4%;
-
-            animation: FadeInFromLeft 2s forwards;
-            
-        }
-
-        .border{
-            position: absolute;
-            top:25%;
-            left:4%;
-            width: 600px;
-            height: 0px;
-            border: 9px solid #FFFFFF ;
-            opacity: 0;
-            animation: FadeInFromLeft 2s 1s forwards;
-        }
-
-        .subHeader{
-            h2{
-                margin: 20px;
-                transition: 1s ease-out;
-                cursor: pointer;
-            }
-            position: absolute;
-            top :25%;
-            padding-left: 4%;
-            font-family: var(--font-stick-no-bills);
-            font-style: normal;
-            font-size: 40px;
-            line-height: 60px;
-            letter-spacing: 0.05em;
-
-            color: #FFFFFF;
-            opacity: 0;
-            animation: FadeInFromLeft 2s 2s forwards;
-
-            h2:hover{
-                transform: translateX(30px);
-                transition: transform 1s ease-in-out
-            }
-
-            h4{
-                font-size: 40px;
-            }
-        }
-
-        h1{
-            position: absolute;
-            left: 0px;
-            bottom: 0px;
-            font-size: 200px;
-            opacity: 0;
-            padding-left: 4%;
-
-            animation: FadeInFromLeftForMain 2s 2s forwards;
-        }
-
-        .bottomButton{
-            cursor: pointer;
-            position:absolute;
-            border-radius: 50%;
-            width: 71px;
-            height: 71px;
-            background-color: #FFFFFF;
-            bottom: 20px;
-            left: 500px;
-            border: none;
-
-            p{
-                opacity: 0;
-            }
-
-            .showAnimation{
-                animation: showText 2s alternate infinite; 
-            }
-        }
-
-        .navigationText{
-            cursor: pointer;
-            position: absolute;
-            bottom: 26px;
-            left: 560px;
-            rotate: 90deg;
-            animation: FadeInFromTop 2s forwards;
-        }
-
-        .mobileNavigation{
-            display: none;
-        }
-    }
-
-    .rightContainer{
-        position: relative;
-
-        image{
-            position: absolute;
-            object-fit: contain;
-        }
-
-        h1{
-            top:-40%;
-            left: -30%;
-            position: absolute;
-            color: white;
-            transform: rotate(90deg);
-            font-family: var(--font-stick-no-bills);
-            animation: loopUpDown 20s 4s infinite;
-        }
-
-        
-    }
-
-    // Animation
-    @keyframes loopUpDown {
-        0% {
-            top: -40%
-        }
-
-        100% {
-            top:140%
-        }
-        
-    }
-
-    @keyframes showText {
-        0% {
-            opacity: 0;
-            transform: translateX(0px); 
-        }
-
-        50%{
-            transform: translateX(40px) rotate(75deg);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateX(50px) rotate(90deg);
-            opacity: 1;
-        }
-        
-    }
-
-    @keyframes FadeInFromLeftForMain {
-        0% {
-            transform: translateX(-600px);
-            opacity: 0;
-        }
-
-        50%{
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateX(0px);
-            opacity: 0.4;
-        }
-        
-    }
-
-    @keyframes FadeInFromLeft {
-        0% {
-            transform: translateX(-600px);
-            opacity: 0;
-        }
-
-        50%{
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateX(0px);
-            opacity: 1;
-        }
-        
-    }
-
-    @keyframes FadeInFromTop {
-        0% {
-            transform: translateY(100px);
-            opacity: 0;
-        }
-
-        50%{
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateY(-1px);
-            opacity: 1;
-        }
-        
-    }
-
-    // mobile version
-    @media screen and (max-width: 1024px) {
-        .rightContainer{
-            display: none;
-        }
+        background-size: contain;
 
         .leftContainer{
-            padding-top: 0px;
+            width: 54%;
+            height: 100%;
+            display: block;
+            border: red solid 1px;
 
-            h1 , h2 , h3{
-                text-shadow: 3px 2px black;
+            h1, h2 , h3 {
+                font-family: var(--font-stick-no-bills);
+                font-style: normal;
                 color: white;
+                font-weight: 500;
+                text-shadow: 5px 10px black;
             }
-
-            h4{
-                color: white;
+    
+            .mainHeader{
+    
+                h3{
+                    padding-top: 10%;
+                    margin:0px 0px;
+                }
+                
+                position: absolute;
+                font-size: 128px;
+                line-height: 191px;
+                letter-spacing: 0.05em;
+                padding: 0% 3%;
+                padding-left: 4%;
+    
+                animation: FadeInFromLeft 2s forwards;
+                
             }
-
-            h3{
-                font-size: 40px;
-            }
-
+    
             .border{
-                top: 18%;
-                border: 2px solid white;
-                width: 200px;
+                position: absolute;
+                top:25%;
+                left:4%;
+                width: 40%;
+                height: 0px;
+                border: 9px solid #FFFFFF ;
+                opacity: 0;
+                border-radius: 20px;
+                animation: FadeInFromLeft 2s 1s forwards;
             }
-
+    
             .subHeader{
-                top:20%;
+                h2{
+                    margin: 20px;
+                    transition: 1s ease-out;
+                    cursor: pointer;
+                }
+                position: absolute;
+                top :25%;
+                padding-left: 4%;
+                font-family: var(--font-stick-no-bills);
+                font-style: normal;
+                font-size: 40px;
+                line-height: 60px;
+                letter-spacing: 0.05em;
+    
+                color: #FFFFFF;
+                opacity: 0;
+                animation: FadeInFromLeft 2s 2s forwards;
+    
+                h2:hover{
+                    transform: translateX(30px);
+                    transition: transform 1s ease-in-out
+                }
+    
+                h4{
+                    font-size: 40px;
+                }
             }
-
-            h2{
-                font-size: 30px;
-            }
-
+    
             h1{
-                font-size: 150px;
-            }
-
-            .bottomButton{
-                display: none;
-            }
-
-            .navigationText{
-                display: none;
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                font-size: 200px;
+                opacity: 0;
+                padding-left: 4%;
+    
+                animation: FadeInFromLeftForMain 2s 2s forwards;
             }
 
             .mobileNavigation{
-                display: block;
+                display: none;
+            }
+        }
+    
+        .middleContainer{
+            border: solid 1px blue;
+            height: 100%;
+            width: 46%;
+            display: flex;
+            
+            h1{
+                left: 28%;
+                width: 40vw;
                 position: absolute;
-                bottom: 0;
-                left: 4%;
+                margin: 0px 0px;
+                color: white;
+                transform: rotate(90deg);
+                font-family: var(--font-stick-no-bills);
+                animation: loopUpDown 20s infinite;
+            }
+    
+            .bottomButton{
+                bottom: 20px;
+                left: 40%;
+                position: absolute;
+                cursor: pointer;
+                border-radius: 50%;
+                width: 71px;
+                height: 71px;
+                background-color: #FFFFFF;
+                border: none;
+    
+                p{
+                    opacity: 0;
+                }
+    
+                .showAnimation{
+                    animation: showText 2s alternate infinite; 
+                }
+            }
+    
+            .navigationText{
+                cursor: pointer;
+                position: absolute;
+                bottom: 26px;
+                left: 45%;
+                rotate: 90deg;
+                animation: FadeInFromTop 2s forwards;
+            }
+        }
+    }
+
+}
+
+
+// Animation
+@keyframes loopUpDown {
+    0% {
+        top: -40%
+    }
+
+    100% {
+        top:140%
+    }
+    
+}
+
+@keyframes showText {
+    0% {
+        opacity: 0;
+        transform: translateX(0px); 
+    }
+
+    50%{
+        transform: translateX(40px) rotate(75deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(50px) rotate(90deg);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes FadeInFromLeftForMain {
+    0% {
+        transform: translateX(0px);
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 0.4;
+    }
+    
+}
+
+@keyframes FadeInFromLeft {
+    0% {
+        transform: translateX(-600px);
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes FadeInFromTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-1px);
+        opacity: 1;
+    }
+    
+}
+
+// mobile version
+@media only screen and (max-width: 1024px) {
+    .container{
+        position: relative;
+        width: 100%;
+        margin: 0px 0px;
+
+        .innerContainer{
+            margin: 0px 0px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            .leftContainer{
+                h1 , h2 , h3 , h4 {
+                    text-shadow: 5px 3px black;
+                }
+
+                width: 100%;
+
+                h1{
+                    font-size: 120px;
+                }
+
+                h2{
+                    font-size: 40px;
+                }
+
+                h3{
+                    font-size: 60px;
+                }
+
+                .border{
+                    top: 20%;
+                    border: 3px solid white;
+                }
+
+                .subHeader{
+                    h4{
+                        font-size: 30px;
+                    }
+                }
+
+                .mobileNavigation{
+                    position: absolute;
+                    left: 4%;
+                    bottom: 0;
+                    display: block;
+                    color: #FFFFFF;
+                }
             }
 
-            .subHeader{
-                h4{
-                    font-size: 20px;
-                    width: 400px;
-                }
-            }            
+            .middleContainer{
+                display: none;
+            }
         }
-
-        
     }
 }

@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import styles from  './page.module.scss'
+import ocean from '../../public/oceanPic.png'
+
 
 export default function Home() {
 
@@ -34,56 +36,58 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.leftContainer}>
-        <Image  src="/oceanPic.png" height={1348} width={1011} alt="ocean" priority/>
-        {currentIndex == -1 && (
-          <>
-            <div className={styles.mainHeader}>
-              <h3>Welcome</h3>
-            </div>
-            <div className={styles.border}></div>
-            <div className={styles.subHeader}>
-              {pages.map((_result,index) =>{
-                return (
-                <>
-                <h2 key={index} onClick={()=>handleClick(index)}>{_result}</h2>
-                </>)
-              })}
-            </div>
-          </>
-        )}
-        {currentIndex > -1 && (
-          <>
-            <div className={styles.mainHeader}>
-              <h3>{pages[currentIndex]}</h3>
-            </div>
-            <div className={styles.border}></div>
-            <div className={styles.subHeader} style={{width:"600px"}}>
-              <h4>
-                {content[currentIndex]}
-              </h4>
-            </div>
-          </>
-        )}
-        <div>
-          <h1>Nicholas Ho</h1>
-        </div>
-        <button className={styles.bottomButton} onClick={()=>handleButton()}>
-            <p className={`${showButton? styles.showAnimation:""}`}>Click me</p>
-        </button>
-        {!showButton && (
-          <h4 className={styles.navigationText} onClick={()=>handleClick(-1)} >Home</h4>
-        )}
+    <div className={styles.container} >
+      <div className={styles.bgimage} style={{backgroundImage:`url(${ocean.src})`}}/>
+      <div className={styles.innerContainer} style={{backgroundImage:`url(${ocean.src})`}}>
+        <div className={styles.leftContainer}>
+          {currentIndex == -1 && (
+            <>
+              <div className={styles.mainHeader}>
+                <h3>Welcome</h3>
+              </div>
+              <div className={styles.border}></div>
+              <div className={styles.subHeader}>
+                {pages.map((_result,index) =>{
+                  return (
+                  <>
+                  <h2 key={index} onClick={()=>handleClick(index)}>{_result}</h2>
+                  </>)
+                })}
+              </div>
+            </>
+          )}
+          {currentIndex > -1 && (
+            <>
+              <div className={styles.mainHeader}>
+                <h3>{pages[currentIndex]}</h3>
+              </div>
+              <div className={styles.border}></div>
+              <div className={styles.subHeader} style={{width:"600px"}}>
+                <h4>
+                  {content[currentIndex]}
+                </h4>
+              </div>
+            </>
+          )}
+          <div>
+            <h1>Nicholas Ho</h1>
+          </div>
 
-        <h4 className={styles.mobileNavigation} onClick={()=>handleClick(-1)} >Home</h4>
-       
-      </div>
-      <div className={styles.rightContainer}>
-        <Image  src="/oceanPic.png" height={1348} width={1011} alt="ocean" priority/>
-        <h1>
-          Fullstack Developer , Web Design , Seo guideline , Brand Design
-        </h1>
+          <h4 className={styles.mobileNavigation} onClick={()=>handleClick(-1)} >Home</h4>
+        </div>
+        <div className={styles.middleContainer}>
+          <h1>
+            Fullstack Developer , Web Design , Seo guideline , Brand Design
+          </h1>
+          <button className={styles.bottomButton} onClick={()=>handleButton()}>
+              <p className={`${showButton? styles.showAnimation:""}`}>Click me</p>
+          </button>
+          {!showButton && (
+            <h4 className={styles.navigationText} onClick={()=>handleClick(-1)} >Home</h4>
+          )}
+
+          
+        </div>
       </div>
     </div>
   )
